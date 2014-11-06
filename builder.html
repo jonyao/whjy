@@ -3,65 +3,270 @@
 <head>
     <meta charset="utf-8">
     <title>Skeleton</title>
- 
+
+    <script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyDY0kkJiTPVd2U7aTOAwhc9ySH6oHxOIYM&sensor=false"></script>
+    <script>
+        function initialize()
+        {
+        var mapProp = {
+          center:new google.maps.LatLng(51.508742,-0.120850),
+          zoom:15,
+          mapTypeId:google.maps.MapTypeId.ROADMAP
+          };
+        var map=new google.maps.Map(document.getElementById("googleMap"),mapProp);
+        }
+
+        google.maps.event.addDomListener(window, 'load', initialize);
+    </script>
+
     <style>
-        body {
-            font: garamond;
-            margin: 0;
-        }
+    .container{
+        background: #E0E0E0;
+        padding:0;
+        margin:0;
+        width: 100%;
+        height: 100%;
+    }
+
+    .trip-bar{
+        display: inline-block;
+        background-color: #FFF;
+        width: 100%;
+    }
+
+    .trip-title{
+        display: inline-block;
+        background-color: #FFF;
+        font-size: 21pt;
+        padding-left: 30px;
+    }
+
+    .trip-dates{
+        display: inline-block;
+        background-color: #FFF;
+    }
+
+    .map-container{
+        background-color: #FFF;
+        display: inline-block;
+        width: 100%;
+    }
+
+    .description-container{
+        display: inline-block;
+        margin: 10px 10px 0px;
+        background-color: #FFF;
+        width: 98.5%;
+        height: 100%;
+    }
+
+    .description{
+        width: 100%;
+    }
+
+    .footer{
+        display: inline-block;
+        text-align: center;
+        background-color: #989898;
+        width: 100%;
+    }
+
+    .topbar{
+        float:left;
+        height: 60px;
+        line-height: 1;
+        width: 100%;
+        background-color: #FFF;
+        margin-bottom: 6px;
+    }
+
+    .topbar-wrapper{
+        width: 97.5%;
+        margin: 20px auto;
+    }
+
+    .logo{
+        font-size: 17pt;
+        display: inline-block;
+    }
+
+    .search-container{
+        display: inline-block;
+    }
+
+    .topbar-links{
+        display: inline-block;
+    }
+
+    .searchResults{
+        display: inline-block;
+    }
+
+    .trip-option-buttons{
+        float: right;
+        display: inline-block;
+    }
+
+    .savebtn {
+        background: #4e8fb5;
+        background-image: -webkit-linear-gradient(top, #4e8fb5, #2980b9);
+        background-image: -moz-linear-gradient(top, #4e8fb5, #2980b9);
+        background-image: -ms-linear-gradient(top, #4e8fb5, #2980b9);
+        background-image: -o-linear-gradient(top, #4e8fb5, #2980b9);
+        background-image: linear-gradient(to bottom, #4e8fb5, #2980b9);
+        -webkit-border-radius: 5;
+        -moz-border-radius: 5;
+        border-radius: 5px;
+        font-family: Arial;
+        color: #ffffff;
+        font-size: 15px;
+        padding: 6px 20px 5px 20px;
+        text-decoration: none;
+        border:none !important;
+        box-shadow:none !important;
+    }
+
+    .savebtn:hover {
+        background: #3cb0fd;
+        background-image: -webkit-linear-gradient(top, #3cb0fd, #3498db);
+        background-image: -moz-linear-gradient(top, #3cb0fd, #3498db);
+        background-image: -ms-linear-gradient(top, #3cb0fd, #3498db);
+        background-image: -o-linear-gradient(top, #3cb0fd, #3498db);
+        background-image: linear-gradient(to bottom, #3cb0fd, #3498db);
+        text-decoration: none;
+    }
+
+    .map{
+        display: inline-block;
+    }
+
+    .itinerary{
+        display: inline-block;
+    }
+    
+    .search-container input[type="text"] {
+        background: url("../img/share-sprite-new.png?v=204b1e0e421b") no-repeat scroll -269px -92px #fff !important;
+        border: 1px solid #000;
+        display: inline-block;
+        color: #888;
+        font-family: "Helvetica Neue",Helvetica,Arial,sans-serif !important;
+        font-size: 13px;
+        height: 16px;
+        margin-bottom: 0;
+        margin: 0 90px 0 40px;
+        width: 188px;
+        border-radius: 3px;
+    }
+
+
+    .logo>a, .topbar-menu-links>a , .trip-dates>a{
+        text-decoration: none; 
+        padding: 0 25px;
+    }
+
+    .logo>a{
+        font: garamond;
+        color: #E6CD00;
+    }
+
+    .topbar-menu-links>a {
+        color: #5A5A5A;
+    }
+
+    .trip-dates>a{
+        color: #008080;
+    }
+
+    body {
+        margin: 0;
+    }
  
-        h1, h2 {
-            margin: 0;
-        }
- 
-        #header {
-            height: 30px;
-            padding: 20px 20px;
-        }
- 
-        #searchResults {
-            position: absolute;
-            left: 0;
-            width: 200px;
-        }
- 
-        #itinerary {
-            position: absolute;
-            right: 0;
-            width: 200px;
-        }
- 
-        #map {
-            position: absolute;
-            margin: 0 200px;
-        }
+    nav {
+        float:right;
+    }
+
+    #googleMap{
+        margin-left: auto;
+        margin-right: auto;
+        width:500px;
+        height:380px;
+    }
+
+    #searchbox{
+        display: inline-block; 
+        height: 20px;
+        width: 260px;
+        font-size: 9pt;
+        border-color: #E0E0E0;
+    }
+
     </style>
 </head>
- 
+
+
 <body>
-    <div id="header">
-        <h2>ON THE SPOT</h2>
-        <ul>
-            <li>BUILDER</li>
-        </ul>
+
+<div class="container">
+    <div class="topbar">
+        <div class="topbar-wrapper">
+            <div class="logo">
+                <a href="/home/">ON THE SPOT</a>
+            </div>
+            <div class="search-container">
+                <form id="search" autocomplete="off" method="get" action="/search">
+                <input id="searchbox" type="text" maxlength="240" autocomplete="off" tabindex="1" value="" placeholder=" Search for itineraries, people, places         |" name="q">
+                </form>
+            </div>
+            <div class="topbar-links">
+                <div class="links-container">
+                    <nav class="topbar-menu-links">
+                        <a href="/html/">BUILDER</a> 
+                        <a href="/css/">EXPLORER</a> 
+                        <a href="/js/">MY ITINERARIES</a> 
+
+                        <a href="/signup/">Sign up / Sign in </a>
+                    </nav>
+
+                </div>
+            </div>
+        </div>
     </div>
- 
-    <div id="searchResults">
-        <ul>
-            <li><a href="this.html">This</a></li>
-            <li><a href="that.html">That</a></li>
-            <li><a href="theOther.html">The Other</a></li>
-        </ul>
+    <div class="trip-bar">
+        <div class="trip-title">
+            <p><strong>My Adventureous Trip</strong></p> 
+        </div>
+        <div class="trip-dates">
+            <a href="tripdates.html">Boston, Ma  12/04/14   -   New York, NY  12/12/14</a>
+        </div>
+        <div class="trip-option-buttons">
+             <button class="savebtn" type="button">Save</button> 
+        </div>
     </div>
- 
-    <div id="map">
-        <h1>Ra ra banjo banjo</h1>
-        <p>Welcome to the Ra ra banjo banjo page. Ra ra banjo banjo. Ra ra banjo banjo. Ra ra banjo banjo.</p>
-        <p>(Ra ra banjo banjo)</p>
+    <div class="map-container">
+        <div class="searchResults">
+            <ul>
+                <li><a href="this.html">This</a></li>
+                <li><a href="that.html">That</a></li>
+                <li><a href="theOther.html">The Other</a></li>
+            </ul>
+        </div>
+     
+        <div class="map">
+            <div id="googleMap"></div>
+        </div>
+     
+        <div class="itinerary">
+            <p>Hello</p>
+        </div>
     </div>
- 
-    <div id="itinerary">
-        <p>Hello</p>
+    <div class="description-container">
+        <div class="description">
+            <p>What is ON THE SPOT?</p>
+        </div>
     </div>
+    <div class="footer">
+        <p>Footer </p>
+    </div>
+</div>
 </body>
 </html>
