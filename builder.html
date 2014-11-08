@@ -82,7 +82,7 @@
 
     .topbar-wrapper{
         width: 97.5%;
-        margin: 20px auto;
+        margin: 10px auto;
     }
 
     .logo{
@@ -92,6 +92,8 @@
 
     .search-container{
         display: inline-block;
+        margin: auto 0;
+        height: 100%;
     }
 
     .topbar-links{
@@ -102,37 +104,72 @@
         display: inline-block;
     }
 
+    .trip-options{
+        display: inline-block;
+        float: right;
+        margin: auto 0;
+        padding-top: 15px;
+        padding-right: 10px;
+
+    }
+
+    .help-icons{
+        display: block;
+    }
+
     .trip-option-buttons{
         float: right;
-        display: inline-block;
     }
 
     .savebtn {
-        background: #4e8fb5;
-        background-image: -webkit-linear-gradient(top, #4e8fb5, #2980b9);
-        background-image: -moz-linear-gradient(top, #4e8fb5, #2980b9);
-        background-image: -ms-linear-gradient(top, #4e8fb5, #2980b9);
-        background-image: -o-linear-gradient(top, #4e8fb5, #2980b9);
-        background-image: linear-gradient(to bottom, #4e8fb5, #2980b9);
+        background: #006699;
         -webkit-border-radius: 5;
         -moz-border-radius: 5;
         border-radius: 5px;
         font-family: Arial;
         color: #ffffff;
-        font-size: 15px;
-        padding: 6px 20px 5px 20px;
+        font-size: 14px;
+        width: 100px;
+        height: 40px;
         text-decoration: none;
         border:none !important;
         box-shadow:none !important;
+        margin-top: 4px;
+    }
+
+    .loadbtn , .previewbtn {
+        background: #E8E8E8;
+        -webkit-border-radius: 5;
+        -moz-border-radius: 5;
+        border-radius: 5px;
+        font-family: Arial;
+        color: #606060;
+        font-size: 14px;
+        width: 100px;
+        height: 40px;
+        text-decoration: none;
+        border: solid 1px #D8D8D8 ;
+        box-shadow:none !important;
+        margin-right: 2px;
     }
 
     .savebtn:hover {
-        background: #3cb0fd;
-        background-image: -webkit-linear-gradient(top, #3cb0fd, #3498db);
-        background-image: -moz-linear-gradient(top, #3cb0fd, #3498db);
-        background-image: -ms-linear-gradient(top, #3cb0fd, #3498db);
-        background-image: -o-linear-gradient(top, #3cb0fd, #3498db);
-        background-image: linear-gradient(to bottom, #3cb0fd, #3498db);
+        background: #0066CC;
+        background-image: -webkit-linear-gradient(top, #0066CC, #3366CC );
+        background-image: -moz-linear-gradient(top, #0066CC, #3366CC );
+        background-image: -ms-linear-gradient(top, #0066CC, #3366CC );
+        background-image: -o-linear-gradient(top, #0066CC, #3366CC );
+        background-image: linear-gradient(to bottom, #0066CC, #3366CC );
+        text-decoration: none;
+    }
+
+    .loadbtn:hover, .previewbtn:hover{
+        background: #B0B0B0 ;
+        background-image: -webkit-linear-gradient(top, #B0B0B0 , #C8C8C8  );
+        background-image: -moz-linear-gradient(top, #B0B0B0 , #C8C8C8  );
+        background-image: -ms-linear-gradient(top, #B0B0B0 , #C8C8C8  );
+        background-image: -o-linear-gradient(top, #B0B0B0 , #C8C8C8  );
+        background-image: linear-gradient(to bottom, #B0B0B0 , #C8C8C8  );
         text-decoration: none;
     }
 
@@ -147,12 +184,10 @@
     .search-container input[type="text"] {
         background: url("../img/share-sprite-new.png?v=204b1e0e421b") no-repeat scroll -269px -92px #fff !important;
         border: 1px solid #000;
-        display: inline-block;
         color: #888;
         font-family: "Helvetica Neue",Helvetica,Arial,sans-serif !important;
         font-size: 13px;
         height: 16px;
-        margin-bottom: 0;
         margin: 0 90px 0 40px;
         width: 188px;
         border-radius: 3px;
@@ -184,6 +219,27 @@
     nav {
         float:right;
     }
+
+    #alert-icon{
+        display: inline-block;
+        width:27px;
+        height:27px;
+    }
+
+    #question-icon{
+        display: inline-block;
+        float: right;
+        width:25px;
+        height:25px;
+    }
+
+    #info-icon{
+        display: inline-block;
+        float: right;
+        width:26px;
+        height:26px;
+    }
+
 
     #googleMap{
         margin-left: auto;
@@ -223,7 +279,7 @@
                         <a href="/html/">BUILDER</a> 
                         <a href="/css/">EXPLORER</a> 
                         <a href="/js/">MY ITINERARIES</a> 
-
+                        <img src="alert_icon.png" id="alert-icon" alt="alert"></img>
                         <a href="/signup/">Sign up / Sign in </a>
                     </nav>
 
@@ -238,8 +294,16 @@
         <div class="trip-dates">
             <a href="tripdates.html">Boston, Ma  12/04/14   -   New York, NY  12/12/14</a>
         </div>
-        <div class="trip-option-buttons">
-             <button class="savebtn" type="button">Save</button> 
+        <div class="trip-options">
+            <div class="help-icons">
+                <img src="question_icon.png" id="question-icon" alt="Question Icon">
+                <img src="info_icon.png" id="info-icon" alt="Info Icon">
+            </div>
+            <div class="trip-option-buttons">
+                <button class="loadbtn" type="button">Load</button> 
+                <button class="previewbtn" type="button">Preview</button> 
+                <button class="savebtn" type="button">Save</button> 
+            </div>
         </div>
     </div>
     <div class="map-container">
