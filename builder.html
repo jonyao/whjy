@@ -2,14 +2,14 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title>Skeleton</title>
+    <title>Builder</title>
 
 	<meta name="ROBOTS" content="NOINDEX, NOFOLLOW" />
 	<!-- JAVASCRIPT to clear search text when the field is clicked -->
 	<script type="text/javascript">
 		window.onload = function(){ 
 		//Get submit button
-		var submitbutton = document.getElementById("query");
+		var submitbutton = document.getElementById("headerquery");
 		//Add listener to submit button
 		if(submitbutton.addEventListener){
 			submitbutton.addEventListener("click", function() {
@@ -36,118 +36,225 @@
     </script>
 
     <style>
-    *{font-family: Arial;}
 
-    .container{
-        background: #E0E0E0;
+    body{
+        font-family: Arial, Tahoma, Helvetica, sans-serif;
+        margin: 0 0;
         padding: 0;
+        background-color: #E0E0E0;
+    }
+
+    a {
+        text-decoration: none;
+    }
+
+    ul {
+        list-style-type: none;
         margin: 0;
-        width: 100%;
-        height: 100%;
+        padding: 0;
     }
 
-     .topbar{
-        float: left;
-        height: 60px;
+    .header{
         width: 100%;
+        height: 80px;
         background-color: #FFF;
-        margin-bottom: 6px;
+        margin-bottom: 10px;
     }
 
-    .topbar-wrapper{
-        width: 97.5%;
-        margin: 20px auto;
+    .wrapper{
+        width: 1300px;
+        position: relative;
+        top: 50%;
+        transform: translateY(-50%);
+        margin: 0 auto;
     }
 
     .logo{
-        display: inline-block;
         font-size: 17pt;
         float: left;
+        margin: 0 60px 0 40px;
     }
 
-    .search-container{
-        display: inline-block;
-        margin: auto 0;
-        height: 100%;
+    .logo a{
+        font: garamond;
+        color: #E6CD00;
     }
 
-    .topbar-links{
+    .header-search{
         display: inline-block;
+    }
+
+    .navigation{
         float: right;
     }
 
-    .trip-bar{
-        display: inline-block;
+    .navigation li{
+        display: inline;
+    }
+
+    .navigation li.selected a{
+        font-weight: bold;
+    }
+
+    .navigation a{
+        color: #5A5A5A;
+        padding: 32px 25px;
+    }
+
+    .navigation a:hover{
+        background-color: #F0F0F0;
+    }
+
+    #alert-icon{
+        margin: 0 25px;
+    }
+
+    .builder-container{
+        width: 1300px;
+        height: 650px;
+        margin: 0 auto;
         background-color: #FFF;
+    }
+
+    .builder-header{
         width: 100%;
+        height: 80px;
+    }
+
+    .builder-wrapper{
+        position: relative;
+        top: 50%;
+        transform: translateY(-50%);
     }
 
     .trip-title{
         display: inline-block;
         font-size: 21pt;
-        padding-left: 30px;
+        margin: 0 30px;
     }
 
     .trip-dates{
         display: inline-block;
     }
 
-    .trip-options{
-        display: inline-block;
-        float: right;
-        margin: auto 0;
-        padding-top: 15px;
-        padding-right: 10px;
+    .trip-dates>a{
+        color: #008080;
     }
 
-    .trip-option-buttons{
+    .itinerary-options{
         float: right;
+        margin-top: -7px;
+        margin-right: 10px;
     }
 
-    .main{
+    #info-icon{
+    }
+
+    #question-icon{
+        margin-right: 5px;
+    }
+
+    .builder-body{
         background-color: #FFF;
     }
 
     .search-column{
         display: inline-block;
-        text-align: center;
-        width: 22%;
         float: left;
+        text-align: center;
+        width: 300px;
+        height: 550px;
+        margin: 0 2px;
+        border: solid 1px #888;
+        border-top-left-radius: 8px 5px;
+        border-top-right-radius: 8px 5px;
     }
 
     .search-title{
-        display: inline-block;
         font-weight: bold;
-        font-size: 11px;
-        background-color: #484848;
+        font-size: 12px;
         color: #FFF;
         width: 100%;
-        padding: 3% 0;
-        border: none;
+        padding: 8px 0;
+        background-color: #484848;
         border-top-left-radius: 8px 5px;
         border-top-right-radius: 8px 5px;
     }
 
     .search-selectors{
+        margin: 3px 3px 5px;
+    }
 
+    .selector-btn{
+        background: #E8E8E8;
+        -webkit-border-radius: 5;
+        -moz-border-radius: 5;
+        border-radius: 5px;
+        color: #101010;
+        font-size: 14px;
+        width: 144px;
+        height: 30px;
+        border: solid 1px #B8B8B8;
+    }
+
+    .location-btn{
+        background: #FFF;
+        -webkit-border-radius: 5;
+        -moz-border-radius: 5;
+        border-radius: 5px;
+        color: #101010;
+        font-size: 14px;
+        width: 144px;
+        height: 30px;
+        border: solid 1px #B8B8B8;
+    }
+
+    .builder-search{
+        margin-bottom: 5px;
+    }
+
+    .search-filter{
+        margin: 3px;
+    }
+
+    .filter-btn{
+        background: #E8E8E8;
+        -webkit-border-radius: 5;
+        -moz-border-radius: 5;
+        border-radius: 5px;
+        color: #101010;
+        font-size: 14px;
+        width: 296px;
+        height: 30px;;
+        border: solid 1px #B8B8B8;        
+    }
+
+    .search-column li{
+        width: 98%;
+        height: 101px;
+        margin: 0 auto;
+        border: solid 1px #B8B8B8;
+        border-top-left-radius: 8px 5px;
+        border-top-right-radius: 8px 5px;
     }
 
     .map{
         display: inline-block;
         padding-top: 15px;
-        width: 56%;
+        width: 700px;
+        height: 535px;
     }
 
     #google-map{
-        height: 480px;
+        height: 535px;
     }
 
-    .savebtn {
+    .save-btn {
         background: #069;
         -webkit-border-radius: 5;
         -moz-border-radius: 5;
         border-radius: 5px;
-        color: #fff;
+        color: #FFF;
         font-size: 14px;
         width: 100px;
         height: 40px;
@@ -156,7 +263,7 @@
         margin-top: 4px;
     }
 
-    .loadbtn , .previewbtn {
+    .load-btn , .preview-btn {
         background: #E8E8E8;
         -webkit-border-radius: 5;
         -moz-border-radius: 5;
@@ -173,12 +280,16 @@
         display: inline-block;
     }
 
+    .footer-container{
+        text-align: center;
+        width: 1300px;
+        margin: 10px auto 0;
+    }
+
     .description-container{
         display: inline-block;
-        margin: 10px 10px 0px;
         background-color: #FFF;
-        width: 98.5%;
-        height: 100%;
+        width: 100%;
     }
 
     .description{
@@ -192,91 +303,62 @@
         width: 100%;
     }
 
-    .help-icons{
-        display: block;
-    }
-
-    .savebtn:hover {
+    .save-btn:hover {
         background: #0066CC;
+        background-image: linear-gradient(to bottom, #0066CC, #3366CC );
         background-image: -webkit-linear-gradient(top, #0066CC, #3366CC );
         background-image: -moz-linear-gradient(top, #0066CC, #3366CC );
         background-image: -ms-linear-gradient(top, #0066CC, #3366CC );
         background-image: -o-linear-gradient(top, #0066CC, #3366CC );
-        background-image: linear-gradient(to bottom, #0066CC, #3366CC );
         text-decoration: none;
     }
 
-    .loadbtn:hover, .previewbtn:hover{
+    .load-btn:hover, .preview-btn:hover{
         background: #B0B0B0 ;
+        background-image: linear-gradient(to bottom, #B0B0B0 , #C8C8C8  );
         background-image: -webkit-linear-gradient(top, #B0B0B0 , #C8C8C8  );
         background-image: -moz-linear-gradient(top, #B0B0B0 , #C8C8C8  );
         background-image: -ms-linear-gradient(top, #B0B0B0 , #C8C8C8  );
         background-image: -o-linear-gradient(top, #B0B0B0 , #C8C8C8  );
-        background-image: linear-gradient(to bottom, #B0B0B0 , #C8C8C8  );
         text-decoration: none;
-    }
-    
-    .search-container input[type="text"] {
-        
-    }
-
-    .logo>a, .topbar-menu-links>a , .trip-dates>a{
-        text-decoration: none;
-        padding: 0 25px;
-    }
-
-    .logo>a{
-        font: garamond;
-        color: #E6CD00;
-    }
-
-    .topbar-menu-links>a {
-        color: #5A5A5A;
-    }
-
-    .trip-dates>a{
-        color: #008080;
-    }
-
-    body {
-        margin: 0;
-    }
-
-    #alert-icon{
-        width:27px;
-        height:27px;
-    }
-
-    #question-icon{
-        display: inline-block;
-        float: right;
-        width:25px;
-        height:25px;
-    }
-
-    #info-icon{
-        display: inline-block;
-        float: right;
-        width:26px;
-        height:26px;
     }
 
     .textinput{
-        padding: 5px 15px;
+        padding: 5px 5px;
         font-size:14px;
-        border: 2px solid #CCC; border-right:0px;
+        color: #E0E0E0;
+        border: 2px solid #CCC;
         border-top-left-radius: 5px 5px;
         border-bottom-left-radius: 5px 5px; 
     }
+
+    .textinput2{
+        padding: 5px 5px;
+        font-size:14px;
+        color: #E0E0E0;
+        border: 2px solid #CCC;
+        border-top-left-radius: 5px 5px;
+        border-bottom-left-radius: 5px 5px;
+        border-top-right-radius: 5px 5px;
+        border-bottom-right-radius: 5px 5px;
+    }
+
     .searchbutton {
         width:30px;
         height:30px;
         font-size:14px;
         cursor: pointer;
         border: 2px solid #CCC;
+        border-left: 0;
         border-top-right-radius: 5px 5px;
         border-bottom-right-radius: 5px 5px;
         background: url('search_icon_transparent.png');
+        background-size: 90%;
+        background-repeat: no-repeat;
+    }
+
+    img {
+        vertical-align: middle;
     }
 
     </style>
@@ -285,79 +367,100 @@
 
 <body>
 
-<div class="container">
-    <div class="topbar">
-        <div class="topbar-wrapper">
+    <div class="header">
+        <div class="wrapper">
+
             <div class="logo">
                 <a href="/home/">ON THE SPOT</a>
             </div>
-            <div class="search-container">
+
+            <div class="header-search">
                 <form method="get" action="http://www.google.com">
-                    <input type="text" id="query" class="textinput" name="q" size="31" maxlength="120" value="Search for itineraries, people, places"><input type="submit" value=" " class="searchbutton">
+                    <input type="text" id="headerquery" class="textinput" size="31" maxlength="120" value="Search for itineraries, people, places"><input type="submit" value=" " class="searchbutton">
                 </form>
             </div>
-            <div class="topbar-links">
-                <nav class="topbar-menu-links">
-                    <a href="/html/">BUILDER</a> 
-                    <a href="/css/">EXPLORER</a> 
-                    <a href="/js/">MY ITINERARIES</a> 
-                    <img src="alert_icon.png" id="alert-icon" alt="alert"></img>
-                    <a href="/signup/">Sign up / Sign in </a>
-                </nav>
+
+            <nav class="navigation">
+                <ul>
+                <li class="selected"><a href="/html/">BUILDER</a></li>
+                <li><a href="/css/">EXPLORER</a></li>
+                <li><a href="/js/">MY ITINERARIES</a></li> 
+                <li><img src="alert_icon.png" id="alert-icon" alt="alert"></img></li>
+                <li><a href="/signup/">Sign up / Sign in </a></li>
+                </ul>
+            </nav>
+
+        </div><!--wrapper-->
+    </div><!--header-->
+
+    <div class="builder-container">
+
+        <div class="builder-header">
+            <div class="builder-wrapper">
+
+                <div class="trip-title">
+                    <strong>My Adventurous Trip</strong>
+                </div>
+                <div class="trip-dates">
+                    <a href="tripdates.html">Boston, Ma 12/04/14 - New York, NY 12/12/14</a>
+                </div>
+                <div class="itinerary-options">                    
+                    <img src="info_icon.png" id="info-icon" alt="Info Icon">
+                    <img src="question_icon.png" id="question-icon" alt="Question Icon">
+                    <button class="load-btn" type="button">Load</button> 
+                    <button class="preview-btn" type="button">Preview</button> 
+                    <button class="save-btn" type="button">Save</button> 
+                </div>
+
+            </div><!--builder-header-->
+        </div><!--builder-wrapper-->
+
+        <div class="builder-body">
+
+            <div class="search-column">
+                <div class="search-title">
+                    Search for your Experiences
+                </div>
+                <div class="search-selectors">
+                    <button class="selector-btn" type="button"><b>Category</b></button>
+                    <button class="location-btn" type="button"><b>Near:</b> Boston, MA</button>
+                </div>
+                <div class="builder-search">
+                    <form method="get" action="http://www.onthespot.com">
+                        <input type="text" id="builderquery" class="textinput2" size="35" maxlength="120" value="Find: Places to go">
+                    </form>
+                </div>
+                <div class="search-filter">
+                    <button class="filter-btn" type="button"><b>Filters</b></button>
+                </div>
+                <ul>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                </ul>
+            </div>
+         
+            <div class="map">
+                <div id="google-map"></div>
+            </div>
+         
+            <div class="itinerary">
+                <p>Hello</p>
             </div>
         </div>
     </div>
 
-    <div class="trip-bar">
-        <div class="trip-title">
-            <p><strong>My Adventurous Trip</strong></p> 
-        </div>
-        <div class="trip-dates">
-            <a href="tripdates.html">Boston, Ma 12/04/14 - New York, NY 12/12/14</a>
-        </div>
-        <div class="trip-options">
-            <div class="help-icons">
-                <img src="question_icon.png" id="question-icon" alt="Question Icon">
-                <img src="info_icon.png" id="info-icon" alt="Info Icon">
-            </div>
-            <div class="trip-option-buttons">
-                <button class="loadbtn" type="button">Load</button> 
-                <button class="previewbtn" type="button">Preview</button> 
-                <button class="savebtn" type="button">Save</button> 
+    <div class="footer-container">
+        <div class="description-container">
+            <div class="description">
+                <p>What is ON THE SPOT?</p>
             </div>
         </div>
-    </div>
 
-    <div class="main">
-        <div class="search-column">
-            <div class="search-title">
-                Search for your Experiences
-            </div>
-            <div class="search-selectors">
-                <select>
-                    <option value="Category">Category</option>
-                </select>
-            </div>
-        </div>
-     
-        <div class="map">
-            <div id="google-map"></div>
-        </div>
-     
-        <div class="itinerary">
-            <p>Hello</p>
+        <div class="footer">
+            <p>Footer </p>
         </div>
     </div>
-
-    <div class="description-container">
-        <div class="description">
-            <p>What is ON THE SPOT?</p>
-        </div>
-    </div>
-
-    <div class="footer">
-        <p>Footer </p>
-    </div>
-</div>
 </body>
 </html>
