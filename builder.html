@@ -234,8 +234,58 @@
         height: 101px;
         margin: 0 auto;
         border: solid 1px #B8B8B8;
-        border-top-left-radius: 8px 5px;
-        border-top-right-radius: 8px 5px;
+        border-radius: 8px 5px;
+        box-shadow: 1px 1px #B8B8B8;
+/*        border-top-left-radius: 8px 5px;
+        border-top-right-radius: 8px 5px;*/
+    }
+    
+    .experience-icon{
+        display: inline-block;
+        float: left;
+        width: 80px;
+        height: 80px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        margin-left: 7px;
+        background-color: #E8E8E8;
+    }
+
+    .experience-details{
+        display: inline-block;
+        float:left;
+        height: 80px;
+        width: 140px;
+        font-size: 7pt;
+        text-align: left;
+        margin-left: 8px;
+        margin-top: 1px;
+    }
+
+    .experience-details-title{
+        height: 12px;
+    }
+
+    .experience-details-rating{
+        height: 5px;
+        margin-left: 3px;
+    }
+
+    .experience-details-address p#street{
+        height: 2px;
+    }
+    .experience-details-address p#city_state{
+        height: 2px;
+    }
+
+    .experience-details-friendsvisited p#friend_intro_string{
+        height: 2px;
+    }
+
+    .friends img#friend{
+        height: 15px;
+        width: 15px;
+        background-color: #E8E8E8;
     }
 
     .map{
@@ -434,10 +484,33 @@
                     <button class="filter-btn" type="button"><b>Filters</b></button>
                 </div>
                 <ul>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
+                <li>
+                    <div class="experience-icon">
+                    </div>
+                    <div class="experience-details">
+                        <div class="experience-details-title">
+                            <strong><p>Hilton Hotel</p></strong>
+                        </div>
+                        <div class="experience-details-rating">
+                            <img src="rating_star.png"></img>
+                            <img src="rating_star.png"></img>
+                            <img src="rating_star.png"></img>
+                            <img src="rating_star.png"></img>
+                            <img src="rating_star.png"></img>
+                        </div>
+                        <div class="experience-details-address">
+                            <p id="street">142 Brighton Ave</p>
+                            <p id="city_state">Boston, MA 02134</p>
+                        </div>
+                        <div class="experience-details-friendsvisited">
+                            <p id="friend_intro_string">Friends who've been here:</p>
+                            <div class="friends">
+                                <img id="friend"></img>
+                                <img id="friend"></img>
+                            </div>
+                        </div>
+                    </div>
+                </li>
                 </ul>
             </div>
          
