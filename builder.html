@@ -4,22 +4,22 @@
     <meta charset="utf-8">
     <title>Builder</title>
 
-	<meta name="ROBOTS" content="NOINDEX, NOFOLLOW" />
-	<!-- JAVASCRIPT to clear search text when the field is clicked -->
-	<script type="text/javascript">
-		window.onload = function(){ 
-		//Get submit button
-		var submitbutton = document.getElementById("headerquery");
-		//Add listener to submit button
-		if(submitbutton.addEventListener){
-			submitbutton.addEventListener("click", function() {
-				if (submitbutton.value == 'Search for itineraries, people, places'){
-					submitbutton.value = '';
-				}
-			});
-		}
-	}
-	</script>
+    <meta name="ROBOTS" content="NOINDEX, NOFOLLOW" />
+    <!-- JAVASCRIPT to clear search text when the field is clicked -->
+    <script type="text/javascript">
+        window.onload = function(){ 
+        //Get submit button
+        var submitbutton = document.getElementById("headerquery");
+        //Add listener to submit button
+        if(submitbutton.addEventListener){
+            submitbutton.addEventListener("click", function() {
+                if (submitbutton.value == 'Search for itineraries, people, places'){
+                    submitbutton.value = '';
+                }
+            });
+        }
+    }
+    </script>
     <script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyDY0kkJiTPVd2U7aTOAwhc9ySH6oHxOIYM&sensor=false"></script>
     <script>
         function initialize()
@@ -31,37 +31,35 @@
           };
         var map=new google.maps.Map(document.getElementById("google-map"),mapProp);
         }
-
         google.maps.event.addDomListener(window, 'load', initialize);
     </script>
 
     <style>
-
-    body{
+    body {
         font-family: Arial, Tahoma, Helvetica, sans-serif;
         margin: 0 0;
         padding: 0;
         background-color: #E0E0E0;
     }
-
     a {
         text-decoration: none;
     }
-
     ul {
         list-style-type: none;
         margin: 0;
         padding: 0;
     }
+    img {
+        vertical-align: middle;
+    }
 
-    .header{
+    .header {
         width: 100%;
         height: 80px;
         background-color: #FFF;
         margin-bottom: 10px;
     }
-
-    .wrapper{
+    .wrapper {
         width: 1300px;
         position: relative;
         top: 50%;
@@ -69,188 +67,112 @@
         margin: 0 auto;
     }
 
-    .logo{
+    .logo {
         font-size: 17pt;
         float: left;
         margin: 0 60px 0 40px;
     }
-
-    .logo a{
+    .logo a {
         font: garamond;
         color: #E6CD00;
     }
 
-    .header-search{
+    .header-search {
         display: inline-block;
     }
+    .textinput {
+        padding: 5px 5px;
+        font-size: 14px;
+        color: #E0E0E0;
+        border: 2px solid #CCC;
+        border-top-left-radius: 5px 5px;
+        border-bottom-left-radius: 5px 5px; 
+    }
+    .search-button {
+        width: 30px;
+        height: 30px;
+        font-size: 14px;
+        cursor: pointer;
+        border: 2px solid #CCC;
+        border-left: 0;
+        border-top-right-radius: 5px 5px;
+        border-bottom-right-radius: 5px 5px;
+        background: url('search_icon_transparent.png');
+        background-size: 90%;
+        background-repeat: no-repeat;
+    }
 
-    .navigation{
+    .navigation {
         float: right;
     }
-
-    .navigation li{
+    .navigation li {
         display: inline;
     }
-
-    .navigation li.selected a{
+    .navigation li.selected a {
         font-weight: bold;
     }
-
-    .navigation a{
+    .navigation a {
         color: #5A5A5A;
         padding: 32px 25px;
     }
-
-    .navigation a:hover{
+    .navigation a:hover {
         background-color: #F0F0F0;
     }
-
-    #alert-icon{
+    #alert-icon {
         margin: 0 25px;
     }
 
-    .builder-container{
+    .builder-container {
         width: 1300px;
         height: 650px;
         margin: 0 auto;
         background-color: #FFF;
     }
 
-    .builder-header{
+    .builder-header {
         width: 100%;
         height: 80px;
     }
-
-    .builder-wrapper{
+    .builder-wrapper {
         position: relative;
         top: 50%;
         transform: translateY(-50%);
     }
 
-    .trip-title{
+    .trip-title {
         display: inline-block;
         font-size: 21pt;
         margin: 0 30px;
     }
-
-    .trip-dates{
+    .trip-dates {
         display: inline-block;
     }
-
-    .trip-dates>a{
+    .trip-dates>a {
         color: #008080;
     }
 
-    .itinerary-options{
+    .itinerary-options {
         float: right;
         margin-top: -7px;
         margin-right: 10px;
     }
-
-    #info-icon{
+    #info-icon {
     }
-
-    #question-icon{
+    #question-icon {
         margin-right: 5px;
     }
-
-    .builder-body{
-        background-color: #FFF;
-    }
-
-    .search-column{
-        display: inline-block;
-        float: left;
-        text-align: center;
-        width: 300px;
-        height: 550px;
-        margin: 0 2px;
-        border: solid 1px #888;
-        border-top-left-radius: 8px 5px;
-        border-top-right-radius: 8px 5px;
-    }
-
-    .search-title{
-        font-weight: bold;
-        font-size: 12px;
-        color: #FFF;
-        width: 100%;
-        padding: 8px 0;
-        background-color: #484848;
-        border-top-left-radius: 8px 5px;
-        border-top-right-radius: 8px 5px;
-    }
-
-    .search-selectors{
-        margin: 3px 3px 5px;
-    }
-
-    .selector-btn{
+    .load-btn, .preview-btn {
         background: #E8E8E8;
         -webkit-border-radius: 5;
         -moz-border-radius: 5;
         border-radius: 5px;
-        color: #101010;
+        color: #606060;
         font-size: 14px;
-        width: 144px;
-        height: 30px;
-        border: solid 1px #B8B8B8;
+        width: 100px;
+        height: 40px;
+        border: solid 1px #D8D8D8 ;
+        margin-right: 2px;
     }
-
-    .location-btn{
-        background: #FFF;
-        -webkit-border-radius: 5;
-        -moz-border-radius: 5;
-        border-radius: 5px;
-        color: #101010;
-        font-size: 14px;
-        width: 144px;
-        height: 30px;
-        border: solid 1px #B8B8B8;
-    }
-
-    .builder-search{
-        margin-bottom: 5px;
-    }
-
-    .search-filter{
-        margin: 3px;
-    }
-
-    .filter-btn{
-        background: #E8E8E8;
-        -webkit-border-radius: 5;
-        -moz-border-radius: 5;
-        border-radius: 5px;
-        color: #101010;
-        font-size: 14px;
-        width: 296px;
-        height: 30px;;
-        border: solid 1px #B8B8B8;        
-    }
-
-    .search-column li{
-        font-size: 14px;
-        width: 94%;
-        height: 90px;
-        margin: 0 auto;
-        padding: 10px;
-        border: solid 1px #B8B8B8;
-        border-top-left-radius: 8px 5px;
-        border-top-right-radius: 8px 5px;
-    }
-
-    .map{
-        display: inline-block;
-        padding-top: 15px;
-        width: 700px;
-        height: 535px;
-    }
-
-    #google-map{
-        height: 535px;
-    }
-
     .save-btn {
         background: #069;
         -webkit-border-radius: 5;
@@ -264,47 +186,15 @@
         box-shadow:none !important;
         margin-top: 4px;
     }
-
-    .load-btn , .preview-btn {
-        background: #E8E8E8;
-        -webkit-border-radius: 5;
-        -moz-border-radius: 5;
-        border-radius: 5px;
-        color: #606060;
-        font-size: 14px;
-        width: 100px;
-        height: 40px;
-        border: solid 1px #D8D8D8 ;
-        margin-right: 2px;
+    .load-btn:hover, .preview-btn:hover {
+        background: #B0B0B0 ;
+        background-image: linear-gradient(to bottom, #B0B0B0 , #C8C8C8  );
+        background-image: -webkit-linear-gradient(top, #B0B0B0 , #C8C8C8  );
+        background-image: -moz-linear-gradient(top, #B0B0B0 , #C8C8C8  );
+        background-image: -ms-linear-gradient(top, #B0B0B0 , #C8C8C8  );
+        background-image: -o-linear-gradient(top, #B0B0B0 , #C8C8C8  );
+        text-decoration: none;
     }
-
-    .itinerary{
-        display: inline-block;
-    }
-
-    .footer-container{
-        text-align: center;
-        width: 1300px;
-        margin: 10px auto 0;
-    }
-
-    .description-container{
-        display: inline-block;
-        background-color: #FFF;
-        width: 100%;
-    }
-
-    .description{
-        width: 100%;
-    }
-
-    .footer{
-        display: inline-block;
-        text-align: center;
-        background-color: #989898;
-        width: 100%;
-    }
-
     .save-btn:hover {
         background: #0066CC;
         background-image: linear-gradient(to bottom, #0066CC, #3366CC );
@@ -315,26 +205,60 @@
         text-decoration: none;
     }
 
-    .load-btn:hover, .preview-btn:hover{
-        background: #B0B0B0 ;
-        background-image: linear-gradient(to bottom, #B0B0B0 , #C8C8C8  );
-        background-image: -webkit-linear-gradient(top, #B0B0B0 , #C8C8C8  );
-        background-image: -moz-linear-gradient(top, #B0B0B0 , #C8C8C8  );
-        background-image: -ms-linear-gradient(top, #B0B0B0 , #C8C8C8  );
-        background-image: -o-linear-gradient(top, #B0B0B0 , #C8C8C8  );
-        text-decoration: none;
+    .builder-body {
+        background-color: #FFF;
     }
 
-    .textinput{
-        padding: 5px 5px;
-        font-size:14px;
-        color: #E0E0E0;
-        border: 2px solid #CCC;
-        border-top-left-radius: 5px 5px;
-        border-bottom-left-radius: 5px 5px; 
+    .search-column {
+        display: inline-block;
+        float: left;
+        text-align: center;
+        width: 300px;
+        height: 550px;
+        margin: 0 2px;
+        border: solid 1px #888;
+        border-top-left-radius: 8px 5px;
+        border-top-right-radius: 8px 5px;
+    }
+    .search-title {
+        font-weight: bold;
+        font-size: 12px;
+        color: #FFF;
+        width: 100%;
+        padding: 8px 0;
+        background-color: #484848;
+        border-top-left-radius: 8px 5px;
+        border-top-right-radius: 8px 5px;
     }
 
-    .textinput2{
+    .search-selectors {
+        margin: 3px 3px 5px;
+    }
+    .selector-btn {
+        background: #E8E8E8;
+        -webkit-border-radius: 5;
+        -moz-border-radius: 5;
+        border-radius: 5px;
+        font-size: 14px;
+        width: 144px;
+        height: 30px;
+        border: solid 1px #B8B8B8;
+    }
+    .location-btn {
+        background: #FFF;
+        -webkit-border-radius: 5;
+        -moz-border-radius: 5;
+        border-radius: 5px;
+        font-size: 14px;
+        width: 144px;
+        height: 30px;
+        border: solid 1px #B8B8B8;
+    }
+
+    .builder-search {
+        margin-bottom: 5px;
+    }
+    .textinput2 {
         padding: 5px 5px;
         font-size:14px;
         color: #E0E0E0;
@@ -344,25 +268,261 @@
         border-top-right-radius: 5px 5px;
         border-bottom-right-radius: 5px 5px;
     }
-
-    .searchbutton {
-        width:30px;
-        height:30px;
-        font-size:14px;
-        cursor: pointer;
-        border: 2px solid #CCC;
-        border-left: 0;
-        border-top-right-radius: 5px 5px;
-        border-bottom-right-radius: 5px 5px;
-        background: url('search_icon_transparent.png');
-        background-size: 90%;
-        background-repeat: no-repeat;
+    
+    .search-filter {
+        margin: 3px;
+    }
+    .filter-btn {
+        background: #E8E8E8;
+        -webkit-border-radius: 5;
+        -moz-border-radius: 5;
+        border-radius: 5px;
+        font-size: 14px;
+        width: 296px;
+        height: 30px;;
+        border: solid 1px #B8B8B8;
     }
 
-    img {
-        vertical-align: middle;
+    .search-column li, .itinerary li {
+        width: 294px;
+        height: 101px;
+        margin: 0 auto;
+        border: solid 1px #B8B8B8;
+        border-radius: 8px 5px;
+        box-shadow: 1px 1px #B8B8B8;
+    }
+    .experience-icon {
+        float: left;
+        width: 80px;
+        height: 80px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        margin-left: 7px;
+        background-color: #E8E8E8;
     }
 
+    .experience-details {
+        float: left;
+        height: 80px;
+        width: 190px;
+        font-size: 7pt;
+        text-align: left;
+        margin-left: 8px;
+        margin-top: 1px;
+    }
+    .experience-wrapper {
+    }
+    .experience-title {
+        display: inline-block;
+        height: 12px;
+    }
+
+    .experience-options {
+        display: inline-block;
+        float: right;
+        margin-top: 2px;
+        margin-right: 7px;
+    }
+    .arrow-icon {
+        display: inline-block;
+        margin-right: 14px;
+        position: relative;
+        width: 0;
+        height: 0;
+        border-top: 7px solid transparent;
+        border-bottom: 7px solid transparent; 
+        border-right: 10px solid #E8E8E8;
+        top: -3px;
+    }
+    .arrow-icon:after {
+        content: "";
+        position: absolute;
+        border: 0 solid transparent;
+        border-top: 4px solid #E8E8E8;
+        border-radius: 0 15px 0 0;
+        left: 10px;
+        top: -2px;
+        width: 12px;
+        height: 12px;
+    }
+    .heart-icon {
+        display: inline-block;
+        margin-top: 5px;
+        margin-right: 5px;
+        position: relative;
+        width: 20px;
+        height: 18px;
+    }
+    .heart-icon:before, .heart-icon:after {
+        position: absolute;
+        content: "";
+        left: 10px;
+        top: 0;
+        width: 10px;
+        height: 16px;
+        background: #E8E8E8;
+        -moz-border-radius: 10px 10px 0 0;
+        border-radius: 10px 10px 0 0;
+        -webkit-transform: rotate(-45deg);
+        -moz-transform: rotate(-45deg);
+        -ms-transform: rotate(-45deg);
+        -o-transform: rotate(-45deg);
+        transform: rotate(-45deg);
+        -webkit-transform-origin: 0 100%;
+        -moz-transform-origin: 0 100%;
+        -ms-transform-origin: 0 100%;
+        -o-transform-origin: 0 100%;
+        transform-origin: 0 100%;
+    }
+    .heart-icon:after {
+        left: 0;
+        -webkit-transform: rotate(45deg);
+        -moz-transform: rotate(45deg);
+        -ms-transform: rotate(45deg);
+        -o-transform: rotate(45deg);
+        transform: rotate(45deg);
+        -webkit-transform-origin: 100% 100%;
+        -moz-transform-origin: 100% 100%;
+        -ms-transform-origin: 100% 100%;
+        -o-transform-origin: 100% 100%;
+        transform-origin :100% 100%;
+    }
+    .plus-icon {
+        display: inline-block;
+        background:#E8E8E8;
+        width:7px;
+        height:20px;
+        position:relative;
+        margin-left:7px;
+    }
+    .plus-icon:before {
+        background:#E8E8E8;
+        content:"";
+        width:20px;
+        height:7px;
+        position:absolute;
+        top:7px;
+        left:-7px;
+    }
+
+    .experience-rating {
+        height: 5px;
+    }
+    .experience-address p#street {
+        height: 3px;
+    }
+    .experience-address p#city_state {
+        height: 3px;
+    }
+    .experience-friendsvisited p#friend_intro_string {
+        height: 3px;
+    }
+    .friends img#friend {
+        height: 15px;
+        width: 15px;
+        background-color: #E8E8E8;
+    }
+
+    .down-arrow {
+        float: right;
+        width: 0; 
+        height: 0; 
+        border-left: 7px solid transparent;
+        border-right: 7px solid transparent;
+        border-top: 6px solid #B8B8B8;
+    }
+
+    .map {
+        display: inline-block;
+        padding-top: 15px;
+        margin-left: 2px;
+        width: 684px;
+        height: 535px;
+    }
+    #google-map {
+        height: 535px;
+    }
+
+    .itinerary-wrapper {
+        display: inline-block;
+        float: right;
+        text-align: center;
+        width: 300px;
+        height: 550px;
+        margin: 0 2px;
+    }
+    .itinerary-title {
+        float: right;
+        text-align: center;
+        width: 300px;
+        height: 16px;
+    }
+    .itinerary-title li {
+        float: left;
+        display: inline-block;
+        font-weight: bold;
+        font-size: 12px;
+        color: #FFF;
+        width: 31%;
+        height: 16px;
+        padding: 8px 0;
+        margin-right: 1px;
+        background-color: #484848;
+        border-top-left-radius: 8px 5px;
+        border-top-right-radius: 8px 5px;
+    }
+    .right-arrow-box {
+        float: right;
+        width: 6%;
+        height: 32px;
+        background-color: #E8E8E8;
+    }
+    .right-arrow-btn {
+        background: #E8E8E8;
+        width: 6%;
+        height: 32px;
+        border:none !important;
+        box-shadow:none !important;
+    }
+    .right-arrow {
+        width: 0; 
+        height: 0;
+        border-top: 6px solid transparent;
+        border-bottom: 6px solid transparent;
+        border-left: 6px solid #888;
+    }
+
+    .itinerary {
+        float: right;
+        text-align: center;
+        width: 298px;
+        height: 518px;
+        margin-top: 16px;
+        border: solid 1px #888;
+    }
+    .empty-space {
+        height: 1px;
+    }
+
+    .footer-container {
+        text-align: center;
+        width: 1300px;
+        margin: 10px auto 0;
+    }
+    .description-container {
+        display: inline-block;
+        background-color: #FFF;
+        width: 100%;
+    }
+    .description {
+        width: 100%;
+    }
+    .footer {
+        display: inline-block;
+        text-align: center;
+        background-color: #989898;
+        width: 100%;
+    }
     </style>
 </head>
 
@@ -378,7 +538,7 @@
 
             <div class="header-search">
                 <form method="get" action="http://www.google.com">
-                    <input type="text" id="headerquery" class="textinput" size="31" maxlength="120" value="Search for itineraries, people, places"><input type="submit" value=" " class="searchbutton">
+                    <input type="text" id="headerquery" class="textinput" size="31" maxlength="120" value="Search for itineraries, people, places"><input type="submit" value=" " class="search-button">
                 </form>
             </div>
 
@@ -414,8 +574,8 @@
                     <button class="save-btn" type="button">Save</button> 
                 </div>
 
-            </div><!--builder-header-->
-        </div><!--builder-wrapper-->
+            </div><!--builder-wrapper-->
+        </div><!--builder-header-->
 
         <div class="builder-body">
 
@@ -436,22 +596,377 @@
                     <button class="filter-btn" type="button"><b>Filters</b></button>
                 </div>
                 <ul>
-                <li><b>Hilton Hotel</b></li>
-                <li></li>
-                <li></li>
-                <li></li>
+                <li>
+                    <div class="experience-icon"></div>
+                    <div class="experience-details">
+                        <div class="experience-wrapper">
+                            <div class="experience-title">
+                                <p><b>Hilton Hotel</b></p>
+                            </div>
+                            <div class="experience-options">
+                                <div class="arrow-icon"></div>
+                                <div class="heart-icon"></div>
+                                <div class="plus-icon"></div>
+                            </div>
+                        </div>
+                        <div class="experience-rating">
+                            <img src="rating_star.png"></img>
+                            <img src="rating_star.png"></img>
+                            <img src="rating_star.png"></img>
+                            <img src="rating_star.png"></img>
+                            <img src="rating_star.png"></img>
+                        </div>
+                        <div class="experience-address">
+                            <p id="street">142 Brighton Ave</p>
+                            <p id="city_state">Boston, MA 02134</p>
+                        </div>
+                        <div class="experience-friendsvisited">
+                            <p id="friend_intro_string">Friends who've been here:</p>
+                            <div class="friends">
+                                <img id="friend"></img>
+                                <img id="friend"></img>
+                                <img id="friend"></img>
+                                <img id="friend"></img>
+                                <img id="friend"></img>
+                                <img id="friend"></img>
+                            </div>
+                            <div class="down-arrow"></div>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="experience-icon"></div>
+                    <div class="experience-details">
+                        <div class="experience-wrapper">
+                            <div class="experience-title">
+                                <p><b>Hilton Hotel</b></p>
+                            </div>
+                            <div class="experience-options">
+                                <div class="arrow-icon"></div>
+                                <div class="heart-icon"></div>
+                                <div class="plus-icon"></div>
+                            </div>
+                        </div>
+                        <div class="experience-rating">
+                            <img src="rating_star.png"></img>
+                            <img src="rating_star.png"></img>
+                            <img src="rating_star.png"></img>
+                            <img src="rating_star.png"></img>
+                            <img src="rating_star.png"></img>
+                        </div>
+                        <div class="experience-address">
+                            <p id="street">142 Brighton Ave</p>
+                            <p id="city_state">Boston, MA 02134</p>
+                        </div>
+                        <div class="experience-friendsvisited">
+                            <p id="friend_intro_string">Friends who've been here:</p>
+                            <div class="friends">
+                                <img id="friend"></img>
+                                <img id="friend"></img>
+                                <img id="friend"></img>
+                                <img id="friend"></img>
+                                <img id="friend"></img>
+                                <img id="friend"></img>
+                            </div>
+                            <div class="down-arrow"></div>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="experience-icon"></div>
+                    <div class="experience-details">
+                        <div class="experience-wrapper">
+                            <div class="experience-title">
+                                <p><b>Hilton Hotel</b></p>
+                            </div>
+                            <div class="experience-options">
+                                <div class="arrow-icon"></div>
+                                <div class="heart-icon"></div>
+                                <div class="plus-icon"></div>
+                            </div>
+                        </div>
+                        <div class="experience-rating">
+                            <img src="rating_star.png"></img>
+                            <img src="rating_star.png"></img>
+                            <img src="rating_star.png"></img>
+                            <img src="rating_star.png"></img>
+                            <img src="rating_star.png"></img>
+                        </div>
+                        <div class="experience-address">
+                            <p id="street">142 Brighton Ave</p>
+                            <p id="city_state">Boston, MA 02134</p>
+                        </div>
+                        <div class="experience-friendsvisited">
+                            <p id="friend_intro_string">Friends who've been here:</p>
+                            <div class="friends">
+                                <img id="friend"></img>
+                                <img id="friend"></img>
+                                <img id="friend"></img>
+                                <img id="friend"></img>
+                                <img id="friend"></img>
+                                <img id="friend"></img>
+                            </div>
+                            <div class="down-arrow"></div>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="experience-icon"></div>
+                    <div class="experience-details">
+                        <div class="experience-wrapper">
+                            <div class="experience-title">
+                                <p><b>Hilton Hotel</b></p>
+                            </div>
+                            <div class="experience-options">
+                                <div class="arrow-icon"></div>
+                                <div class="heart-icon"></div>
+                                <div class="plus-icon"></div>
+                            </div>
+                        </div>
+                        <div class="experience-rating">
+                            <img src="rating_star.png"></img>
+                            <img src="rating_star.png"></img>
+                            <img src="rating_star.png"></img>
+                            <img src="rating_star.png"></img>
+                            <img src="rating_star.png"></img>
+                        </div>
+                        <div class="experience-address">
+                            <p id="street">142 Brighton Ave</p>
+                            <p id="city_state">Boston, MA 02134</p>
+                        </div>
+                        <div class="experience-friendsvisited">
+                            <p id="friend_intro_string">Friends who've been here:</p>
+                            <div class="friends">
+                                <img id="friend"></img>
+                                <img id="friend"></img>
+                                <img id="friend"></img>
+                                <img id="friend"></img>
+                                <img id="friend"></img>
+                                <img id="friend"></img>
+                            </div>
+                            <div class="down-arrow"></div>
+                        </div>
+                    </div>
+                </li>
                 </ul>
-            </div>
+            </div><!--search-column-->
          
             <div class="map">
                 <div id="google-map"></div>
             </div>
-         
-            <div class="itinerary">
-                <p>Hello</p>
+            
+            <div class="itinerary-wrapper">
+                <div class="itinerary-title">
+                    <ul>
+                    <li>
+                        Day 1
+                    </li>
+                    <li>Day 2</li>
+                    <li>Day 3</li>
+                    </ul>
+                    <button class="right-arrow-btn" type="button">
+                        <div class="right-arrow"></div>
+                    </button>
+                </div>
+
+                <div class="itinerary">
+                    <div class="empty-space"></div>
+                    <ul>
+                    <li>
+                        <div class="experience-icon"></div>
+                        <div class="experience-details">
+                            <div class="experience-wrapper">
+                                <div class="experience-title">
+                                    <p><b>Hilton Hotel</b></p>
+                                </div>
+                                <div class="experience-options">
+                                    <div class="arrow-icon"></div>
+                                    <div class="heart-icon"></div>
+                                    <div class="plus-icon"></div>
+                                </div>
+                            </div>
+                            <div class="experience-rating">
+                                <img src="rating_star.png"></img>
+                                <img src="rating_star.png"></img>
+                                <img src="rating_star.png"></img>
+                                <img src="rating_star.png"></img>
+                                <img src="rating_star.png"></img>
+                            </div>
+                            <div class="experience-address">
+                                <p id="street">142 Brighton Ave</p>
+                                <p id="city_state">Boston, MA 02134</p>
+                            </div>
+                            <div class="experience-friendsvisited">
+                                <p id="friend_intro_string">Friends who've been here:</p>
+                                <div class="friends">
+                                    <img id="friend"></img>
+                                    <img id="friend"></img>
+                                    <img id="friend"></img>
+                                    <img id="friend"></img>
+                                    <img id="friend"></img>
+                                    <img id="friend"></img>
+                                </div>
+                                <div class="down-arrow"></div>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="experience-icon"></div>
+                        <div class="experience-details">
+                            <div class="experience-wrapper">
+                                <div class="experience-title">
+                                    <p><b>Hilton Hotel</b></p>
+                                </div>
+                                <div class="experience-options">
+                                    <div class="arrow-icon"></div>
+                                    <div class="heart-icon"></div>
+                                    <div class="plus-icon"></div>
+                                </div>
+                            </div>
+                            <div class="experience-rating">
+                                <img src="rating_star.png"></img>
+                                <img src="rating_star.png"></img>
+                                <img src="rating_star.png"></img>
+                                <img src="rating_star.png"></img>
+                                <img src="rating_star.png"></img>
+                            </div>
+                            <div class="experience-address">
+                                <p id="street">142 Brighton Ave</p>
+                                <p id="city_state">Boston, MA 02134</p>
+                            </div>
+                            <div class="experience-friendsvisited">
+                                <p id="friend_intro_string">Friends who've been here:</p>
+                                <div class="friends">
+                                    <img id="friend"></img>
+                                    <img id="friend"></img>
+                                    <img id="friend"></img>
+                                    <img id="friend"></img>
+                                    <img id="friend"></img>
+                                    <img id="friend"></img>
+                                </div>
+                                <div class="down-arrow"></div>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="experience-icon"></div>
+                        <div class="experience-details">
+                            <div class="experience-wrapper">
+                                <div class="experience-title">
+                                    <p><b>Hilton Hotel</b></p>
+                                </div>
+                                <div class="experience-options">
+                                    <div class="arrow-icon"></div>
+                                    <div class="heart-icon"></div>
+                                    <div class="plus-icon"></div>
+                                </div>
+                            </div>
+                            <div class="experience-rating">
+                                <img src="rating_star.png"></img>
+                                <img src="rating_star.png"></img>
+                                <img src="rating_star.png"></img>
+                                <img src="rating_star.png"></img>
+                                <img src="rating_star.png"></img>
+                            </div>
+                            <div class="experience-address">
+                                <p id="street">142 Brighton Ave</p>
+                                <p id="city_state">Boston, MA 02134</p>
+                            </div>
+                            <div class="experience-friendsvisited">
+                                <p id="friend_intro_string">Friends who've been here:</p>
+                                <div class="friends">
+                                    <img id="friend"></img>
+                                    <img id="friend"></img>
+                                    <img id="friend"></img>
+                                    <img id="friend"></img>
+                                    <img id="friend"></img>
+                                    <img id="friend"></img>
+                                </div>
+                                <div class="down-arrow"></div>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="experience-icon"></div>
+                        <div class="experience-details">
+                            <div class="experience-wrapper">
+                                <div class="experience-title">
+                                    <p><b>Hilton Hotel</b></p>
+                                </div>
+                                <div class="experience-options">
+                                    <div class="arrow-icon"></div>
+                                    <div class="heart-icon"></div>
+                                    <div class="plus-icon"></div>
+                                </div>
+                            </div>
+                            <div class="experience-rating">
+                                <img src="rating_star.png"></img>
+                                <img src="rating_star.png"></img>
+                                <img src="rating_star.png"></img>
+                                <img src="rating_star.png"></img>
+                                <img src="rating_star.png"></img>
+                            </div>
+                            <div class="experience-address">
+                                <p id="street">142 Brighton Ave</p>
+                                <p id="city_state">Boston, MA 02134</p>
+                            </div>
+                            <div class="experience-friendsvisited">
+                                <p id="friend_intro_string">Friends who've been here:</p>
+                                <div class="friends">
+                                    <img id="friend"></img>
+                                    <img id="friend"></img>
+                                    <img id="friend"></img>
+                                    <img id="friend"></img>
+                                    <img id="friend"></img>
+                                    <img id="friend"></img>
+                                </div>
+                                <div class="down-arrow"></div>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="experience-icon"></div>
+                        <div class="experience-details">
+                            <div class="experience-wrapper">
+                                <div class="experience-title">
+                                    <p><b>Hilton Hotel</b></p>
+                                </div>
+                                <div class="experience-options">
+                                    <div class="arrow-icon"></div>
+                                    <div class="heart-icon"></div>
+                                    <div class="plus-icon"></div>
+                                </div>
+                            </div>
+                            <div class="experience-rating">
+                                <img src="rating_star.png"></img>
+                                <img src="rating_star.png"></img>
+                                <img src="rating_star.png"></img>
+                                <img src="rating_star.png"></img>
+                                <img src="rating_star.png"></img>
+                            </div>
+                            <div class="experience-address">
+                                <p id="street">142 Brighton Ave</p>
+                                <p id="city_state">Boston, MA 02134</p>
+                            </div>
+                            <div class="experience-friendsvisited">
+                                <p id="friend_intro_string">Friends who've been here:</p>
+                                <div class="friends">
+                                    <img id="friend"></img>
+                                    <img id="friend"></img>
+                                    <img id="friend"></img>
+                                    <img id="friend"></img>
+                                    <img id="friend"></img>
+                                    <img id="friend"></img>
+                                </div>
+                                <div class="down-arrow"></div>
+                            </div>
+                        </div>
+                    </li>
+                    </ul>
+                </div>
             </div>
-        </div>
-    </div>
+        </div><!--builder-body-->
+    </div><!--builder-container-->
 
     <div class="footer-container">
         <div class="description-container">
